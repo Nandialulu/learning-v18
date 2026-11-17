@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "features": "機能",
+    "subjects": "科目",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "tagline": "学生のために",
+    "title": "より短時間で\nより多く学ぶ",
+    "subtitle": "忙しい学生向けのフラッシュカードとクイズ。一つずつ概念を学び、即座にフィードバックを得て、進捗を追跡。",
+    "ctaStart": "無料で始める",
+    "flashcardsLink": "フラッシュカードを試す",
+    "ctaBrowse": "科目を見る"
+  },
+  "features": {
+    "title": "試験対策に必要なすべて",
+    "subtitle": "早く結果を出したい学生のためのツール。",
+    "flashcardsTitle": "フラッシュカード",
+    "flashcardsDesc": "一枚に一つの概念。いつでもどこでも復習できます。",
+    "flashcardsLink": "学習を始める",
+    "quizTitle": "即座クイズ",
+    "quizDesc": "答えるとすぐに正誤と簡単な解説を表示します。",
+    "progressTitle": "進捗の追跡",
+    "progressDesc": "どの科目を習得し、どこにさらなる練習が必要か確認できます。"
+  },
+  "subjects": {
+    "title": "人気のファイナンス科目",
+    "subtitle": "財務、経済、銀行経営などから選びましょう。",
+    "financeBasics": "財務基礎",
+    "economics": "経済学",
+    "financeManagement": "財務管理",
+    "investmentManagement": "投資管理",
+    "corporateFinance": "企業財務",
+    "bankManagement": "銀行管理",
+    "bankAccounting": "銀行会計",
+    "cardCount": "120+ カード",
+    "flashcardsCount": "{count}枚",
+    "quizzesCount": "{count}問",
+    "quizLink": "クイズ",
+    "comingSoon": "準備中"
+  },
+  "cta": {
+    "title": "もっと賢く勉強する準備はできていますか？",
+    "subtitle": "数千人の学生がフラッシュカードとクイズで速く学んでいます。",
+    "button": "無料アカウントを作成"
+  },
+  "flashcards": {
+    "chooseTopic": "トピックを選んで学習を始めましょう",
+    "backToTopics": "トピック一覧",
+    "title": "{subject} — フラッシュカード",
+    "subtitle": "{total}枚中 {current}枚目",
+    "question": "問題",
+    "answer": "答え",
+    "tapToFlip": "タップして裏返す",
+    "showAnswer": "答えを見る",
+    "hideAnswer": "問題を見る",
+    "previous": "前へ",
+    "next": "次へ"
+  },
+  "quiz": {
+    "title": "{subject} — クイズ",
+    "subtitle": "{total}問中 {current}問目",
+    "check": "確認",
+    "next": "次へ",
+    "finish": "終了",
+    "score": "{total}問中 {score}問正解",
+    "correct": "正解！",
+    "incorrect": "不正解。正解：{answer}",
+    "tryAgain": "もう一度",
+    "placeholder": "答えを入力"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "新しい科目をリクエストしたい、または質問がありますか？メッセージを送ってください。",
+    "nameLabel": "名前",
+    "namePlaceholder": "あなたの名前",
+    "emailLabel": "メール",
+    "emailPlaceholder": "your@email.com",
+    "messageLabel": "メッセージ",
+    "messagePlaceholder": "どのようなお手伝いが必要ですか？",
+    "submit": "送信",
+    "pageTitle": "お問い合わせ"
+  },
+  "auth": {
+    "login": "ログイン",
+    "register": "登録",
+    "logout": "ログアウト",
+    "loginTitle": "ログイン",
+    "loginSubtitle": "メールアドレスだけでログインできます。認証コードがメールに送信されます。",
+    "registerTitle": "新規登録",
+    "registerSubtitle": "メールアドレスだけで登録できます。認証コードがメールに送信されます。",
+    "emailLabel": "メールアドレス",
+    "emailPlaceholder": "you@example.com",
+    "sendCode": "コードを送信",
+    "sending": "送信中...",
+    "verifying": "確認中...",
+    "creating": "作成中...",
+    "codeLabel": "認証コード",
+    "codePlaceholder": "6桁のコード",
+    "codeSent": "{email}にコードを送信しました。受信箱をご確認ください。",
+    "codeResent": "新しいコードを送信しました。",
+    "resend": "コードを再送信",
+    "changeEmail": "メールアドレスを変更",
+    "verifyLogin": "ログイン",
+    "firstName": "名",
+    "lastName": "姓",
+    "firstNamePlaceholder": "名",
+    "lastNamePlaceholder": "姓",
+    "createAccount": "アカウント作成",
+    "noAccount": "アカウントをお持ちでないですか？",
+    "hasAccount": "すでにアカウントをお持ちですか？",
+    "toLogin": "ログイン",
+    "toRegister": "登録",
+    "error": "エラーが発生しました。もう一度お試しください。",
+    "invalidEmail": "有効なメールアドレスを入力してください。"
+  },
+  "footer": {
+    "rights": "2026 Learning. All rights reserved."
+  },
+  "services": {
+    "pageTitle": "Learningの仕組み",
+    "subtitle": "学生がより早く学び、より長く記憶するのを助ける3つのシンプルなツール。"
+  },
+  "portfolio": {
+    "pageTitle": "科目を探す",
+    "subtitle": "気になる科目のフラッシュカードとクイズを見つけましょう。"
+  }
+}

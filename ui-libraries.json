@@ -1,0 +1,36 @@
+{
+  "motion_level": 2,
+  "visual_direction": "bright-playful",
+  "packages": [
+    "framer-motion",
+    "lenis",
+    "lucide-react",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "shadcn_components": [
+    "button",
+    "input",
+    "textarea",
+    "card"
+  ],
+  "custom_components": [
+    "Header",
+    "Footer",
+    "Hero",
+    "FeatureCard",
+    "SubjectCard",
+    "CTABlock",
+    "ContactForm",
+    "LanguageSwitcher"
+  ],
+  "animation_config": {
+    "core_library": "framer-motion",
+    "scroll_library": "lenis",
+    "text_animation": "framer-motion",
+    "page_transition": "framer-motion",
+    "ambient_system": "css",
+    "micro_interactions": "framer-motion",
+    "gsap_plugins": []
+  }
+}

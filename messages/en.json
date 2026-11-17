@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "subjects": "Subjects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "FOR STUDENTS",
+    "title": "Learn More\nin Less Time",
+    "subtitle": "Flashcards and quizzes for busy students. One concept at a time, instant feedback, track your progress.",
+    "ctaStart": "Start Learning Free",
+    "flashcardsLink": "Try a flashcard",
+    "ctaBrowse": "Browse Subjects"
+  },
+  "features": {
+    "title": "Everything You Need to Ace Your Exams",
+    "subtitle": "Tools designed for students who want fast results.",
+    "flashcardsTitle": "Flashcards",
+    "flashcardsDesc": "One concept per card with a concise explanation. Review anywhere on your phone.",
+    "flashcardsLink": "Start learning",
+    "quizTitle": "Instant Quiz",
+    "quizDesc": "See right or wrong after every answer, with a short explanation so you learn from mistakes.",
+    "progressTitle": "Track Progress",
+    "progressDesc": "See which subjects you have mastered and which need more practice."
+  },
+  "subjects": {
+    "title": "Popular Finance Subjects",
+    "subtitle": "Choose from finance, economics, banking, and more.",
+    "financeBasics": "Fundamentals of Finance",
+    "economics": "Economics",
+    "financeManagement": "Financial Management",
+    "investmentManagement": "Investment Management",
+    "corporateFinance": "Corporate Finance",
+    "bankManagement": "Bank Management",
+    "bankAccounting": "Bank Accounting",
+    "cardCount": "120+ cards",
+    "flashcardsCount": "{count} cards",
+    "quizzesCount": "{count} quizzes",
+    "quizLink": "Quiz",
+    "comingSoon": "Coming soon"
+  },
+  "cta": {
+    "title": "Ready to Start Studying Smarter?",
+    "subtitle": "Join thousands of students using flashcards and quizzes to learn faster.",
+    "button": "Create Free Account"
+  },
+  "flashcards": {
+    "chooseTopic": "Choose a topic to start studying",
+    "backToTopics": "All topics",
+    "title": "{subject} — Flashcards",
+    "subtitle": "Card {current} of {total}",
+    "question": "Question",
+    "answer": "Answer",
+    "tapToFlip": "Tap to flip",
+    "showAnswer": "Show answer",
+    "hideAnswer": "Show question",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "quiz": {
+    "title": "{subject} — Quiz",
+    "subtitle": "Question {current} of {total}",
+    "check": "Check",
+    "next": "Next",
+    "finish": "Finish",
+    "score": "{score} of {total} correct",
+    "correct": "Correct!",
+    "incorrect": "Incorrect. Answer: {answer}",
+    "tryAgain": "Try again",
+    "placeholder": "Type your answer"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have a question or want a new subject? Send us a message.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "How can we help?",
+    "submit": "Send Message",
+    "pageTitle": "Contact"
+  },
+  "auth": {
+    "login": "Log in",
+    "register": "Sign up",
+    "logout": "Log out",
+    "loginTitle": "Log in",
+    "loginSubtitle": "Log in with your email only. A verification code will be sent to your inbox.",
+    "registerTitle": "Sign up",
+    "registerSubtitle": "Only your email is required. A verification code will be sent to your inbox.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "sendCode": "Send code",
+    "sending": "Sending...",
+    "verifying": "Verifying...",
+    "creating": "Creating...",
+    "codeLabel": "Verification code",
+    "codePlaceholder": "6-digit code",
+    "codeSent": "We sent a code to {email} — check your inbox.",
+    "codeResent": "A new code has been sent.",
+    "resend": "Resend code",
+    "changeEmail": "Change email",
+    "verifyLogin": "Log in",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "firstNamePlaceholder": "Your first name",
+    "lastNamePlaceholder": "Your last name",
+    "createAccount": "Create account",
+    "noAccount": "No account yet?",
+    "hasAccount": "Already have an account?",
+    "toLogin": "Log in",
+    "toRegister": "Sign up",
+    "error": "Something went wrong. Please try again.",
+    "invalidEmail": "Please enter a valid email address."
+  },
+  "footer": {
+    "rights": "2026 Learning. All rights reserved."
+  },
+  "services": {
+    "pageTitle": "How Learning Works",
+    "subtitle": "Three simple tools designed to help students learn faster and remember longer."
+  },
+  "portfolio": {
+    "pageTitle": "Explore Subjects",
+    "subtitle": "Find flashcards and quizzes for the courses you care about."
+  }
+}

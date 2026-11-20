@@ -26,7 +26,7 @@ export default function CTABlock() {
             className="mt-8 inline-block"
           >
             <Link
-              href="/register"
+              href="/portfolio"
               className="inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-semibold text-primary shadow-md"
             >
               {t("button")}

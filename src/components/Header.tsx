@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import MobileMenu from "@/components/MobileMenu";
-import AuthNav from "@/components/AuthNav";
 
 const NAV_ITEMS = ["home", "features", "subjects", "contact"];
 const NAV_PATHS: Record<string, string> = {
@@ -37,9 +36,6 @@ export default function Header({ locale }: { locale: string }) {
         </nav>
 
         <div className="flex items-center gap-4">
-          <div className="hidden md:block">
-            <AuthNav />
-          </div>
           <LanguageSwitcher locales={["mn", "en", "ko", "ja"]} />
           <MobileMenu />
         </div>

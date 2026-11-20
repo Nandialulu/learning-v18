@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Link, usePathname } from "@/i18n/routing";
+import { Link } from "@/i18n/routing";
 import { Menu, X } from "lucide-react";
-import { useAuth } from "@/lib/auth/AuthContext";
 
 const NAV_ITEMS = ["home", "features", "subjects", "contact"];
 const NAV_PATHS: Record<string, string> = {
@@ -17,10 +16,6 @@ const NAV_PATHS: Record<string, string> = {
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
   const t = useTranslations("nav");
-  const ta = useTranslations("auth");
-  const { user, logout } = useAuth();
-  const pathname = usePathname();
-  const next = `?next=${encodeURIComponent(pathname)}`;
 
   return (
     <div className="md:hidden">
@@ -46,37 +41,6 @@ export default function MobileMenu() {
               </Link>
               ))}
             </nav>
-            <div className="mt-4 flex flex-col gap-3 border-t border-border pt-4">
-              {user ? (
-                <button
-                  type="button"
-                  onClick={() => {
-                    setOpen(false);
-                    logout();
-                  }}
-                  className="inline-flex h-11 items-center justify-center rounded-full border border-border text-sm font-semibold text-foreground"
-                >
-                  {ta("logout")}
-                </button>
-              ) : (
-                <>
-                  <Link
-                    href={`/login${next}`}
-                    onClick={() => setOpen(false)}
-                    className="inline-flex h-11 items-center justify-center rounded-full border border-border text-sm font-semibold text-foreground"
-                  >
-                    {ta("login")}
-                  </Link>
-                  <Link
-                    href={`/register${next}`}
-                    onClick={() => setOpen(false)}
-                    className="inline-flex h-11 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground"
-                  >
-                    {ta("register")}
-                  </Link>
-                </>
-              )}
-            </div>
           </div>
       )}
     </div>

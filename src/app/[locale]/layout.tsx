@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import ApolloClientProvider from "@/lib/apollo/provider";
-import { AuthProvider } from "@/lib/auth/AuthContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "../globals.css";
@@ -49,11 +48,9 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
           <ApolloClientProvider>
-            <AuthProvider>
-              <Header locale={locale} />
-              <main className="flex-1">{children}</main>
-              <Footer />
-            </AuthProvider>
+            <Header locale={locale} />
+            <main className="flex-1">{children}</main>
+            <Footer />
           </ApolloClientProvider>
         </NextIntlClientProvider>
       </body>

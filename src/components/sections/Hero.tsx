@@ -1,5 +1,6 @@
 "use client";
 
+import CmsIntro from "@/components/cms/CmsIntro";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
@@ -26,9 +27,11 @@ export default function HeroSection() {
       </FadeIn>
 
       <FadeIn delay={0.2}>
-        <p className="mt-6 max-w-[640px] text-lg leading-relaxed text-muted-foreground">
-          {t("subtitle")}
-        </p>
+        <CmsIntro slug="home" showTitle={false}>
+          <p className="mt-6 max-w-[640px] text-lg leading-relaxed text-muted-foreground">
+            {t("subtitle")}
+          </p>
+        </CmsIntro>
       </FadeIn>
 
       <FadeIn delay={0.3}>

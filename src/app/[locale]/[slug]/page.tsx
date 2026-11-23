@@ -1,89 +1,39 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { getStaticApolloClient } from "@/lib/apollo/static-client";
-import {
-  CP_PAGES,
-  type CpPagesData,
-  type Page,
-} from "@/graphql/cms/queries/page";
+import { getCmsSnapshot } from "@/lib/cms-server";
+import CmsIntro from "@/components/cms/CmsIntro";
 import { routing } from "@/i18n/routing";
 
+const reserved = new Set(["services", "portfolio", "contact", "flashcards", "quiz"]);
+
 export async function generateStaticParams() {
-  const client = getStaticApolloClient();
-  const results = await Promise.all(
-    routing.locales.map(async (locale) => {
-      const { data } = await client.query<CpPagesData>({
-        query: CP_PAGES,
-        variables: { language: locale },
-      });
-      return (data?.cpPages ?? [])
-        .filter((p): p is Page & { slug: string } => !!p.slug)
-        .map((p) => ({
-          locale,
-          slug: p.slug,
-        }));
-    })
-  );
+  const results = await Promise.all(routing.locales.map(async (locale) => {
+    const { pages } = await getCmsSnapshot(locale);
+    return pages.filter((page) => page.slug && !reserved.has(page.slug)).map((page) => ({ locale, slug: page.slug! }));
+  }));
   return results.flat();
 }
 
-export async function generateMetadata({
-  params,
-}: {
+export async function generateMetadata({ params }: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  setRequestLocale(locale);
-  const client = getStaticApolloClient();
-  const { data } = await client.query<CpPagesData>({
-    query: CP_PAGES,
-    variables: { language: locale },
-  });
-  const page = (data?.cpPages ?? []).find(
-    (p): p is Page & { slug: string } => p.slug === slug
-  );
-  if (!page) return {};
-  return {
-    title: `${page.name} | Learning`,
-    description: page.description ?? undefined,
-  };
+  const { pages } = await getCmsSnapshot(locale);
+  const page = pages.find((page) => page.slug === slug);
+  return page ? { title: page.name + " | Learning" } : {};
 }
 
-export default async function CmsPage({
-  params,
-}: {
+export default async function CmsPage({ params }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const client = getStaticApolloClient();
-  const { data } = await client.query<CpPagesData>({
-    query: CP_PAGES,
-    variables: { language: locale },
-  });
-  const page = (data?.cpPages ?? []).find(
-    (p): p is Page & { slug: string } => p.slug === slug
-  );
-
-  if (!page) notFound();
-
+  const { pages } = await getCmsSnapshot(locale);
+  if (!pages.some((page) => page.slug === slug)) notFound();
   return (
     <article className="w-full px-6 py-16 lg:px-[60px] lg:py-24">
-      <div className="mx-auto max-w-[800px]">
-        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-          {page.name}
-        </h1>
-        {page.description && (
-          <p className="mt-4 text-lg text-muted-foreground">{page.description}</p>
-        )}
-        {page.content && (
-          <div
-            className="prose prose-lg mt-8 max-w-none text-foreground"
-            dangerouslySetInnerHTML={{ __html: page.content }}
-          />
-        )}
-      </div>
+      <div className="mx-auto max-w-[800px]"><CmsIntro slug={slug} /></div>
     </article>
   );
 }

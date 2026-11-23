@@ -1,16 +1,10 @@
+"use client";
+
 import { useTranslations } from "next-intl";
+import CmsNav from "@/components/cms/CmsNav";
 import { Link } from "@/i18n/routing";
 
-const NAV_ITEMS = ["home", "features", "subjects", "contact"];
-const NAV_PATHS: Record<string, string> = {
-  home: "/",
-  features: "/services",
-  subjects: "/portfolio",
-  contact: "/contact",
-};
-
 export default function Footer() {
-  const t = useTranslations("nav");
   const tf = useTranslations("footer");
 
   return (
@@ -21,15 +15,7 @@ export default function Footer() {
         </Link>
         <p className="hidden text-sm text-muted-foreground sm:block">{tf("rights")}</p>
         <nav className="hidden items-center gap-6 md:flex">
-          {NAV_ITEMS.map((key) => (
-            <Link
-              key={key}
-              href={NAV_PATHS[key]}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {t(key)}
-            </Link>
-          ))}
+          <CmsNav kind="footer" className="text-sm text-muted-foreground transition-colors hover:text-foreground" />
         </nav>
       </div>
     </footer>

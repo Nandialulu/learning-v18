@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import ApolloClientProvider from "@/lib/apollo/provider";
+import { CmsProvider } from "@/components/cms/CmsProvider";
+import { getCmsSnapshot } from "@/lib/cms-server";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "../globals.css";
@@ -41,6 +43,7 @@ export default async function LocaleLayout({
 }: LayoutProps<"/[locale]">) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const cms = await getCmsSnapshot(locale);
   const messages = messagesByLocale[locale] ?? messagesMn;
 
   return (
@@ -48,9 +51,11 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
           <ApolloClientProvider>
-            <Header locale={locale} />
-            <main className="flex-1">{children}</main>
-            <Footer />
+            <CmsProvider initial={cms}>
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </CmsProvider>
           </ApolloClientProvider>
         </NextIntlClientProvider>
       </body>

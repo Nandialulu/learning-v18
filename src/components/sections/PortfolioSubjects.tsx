@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import CmsIntro from "@/components/cms/CmsIntro";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { FadeIn } from "@/components/motion/FadeIn";
@@ -29,16 +30,18 @@ export default function PortfolioSubjects({
   return (
     <div className="w-full px-6 py-16 lg:px-[60px] lg:py-24">
       <div className="mx-auto max-w-[1000px]">
-        <FadeIn>
-          <h1 className="text-center text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-            {tp("pageTitle")}
-          </h1>
-        </FadeIn>
-        <FadeIn delay={0.1}>
-          <p className="mx-auto mt-4 max-w-[640px] text-center text-lg text-muted-foreground">
-            {tp("subtitle")}
-          </p>
-        </FadeIn>
+        <CmsIntro slug="portfolio">
+          <FadeIn>
+            <h1 className="text-center text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl">
+              {tp("pageTitle")}
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <p className="mx-auto mt-4 max-w-[640px] text-center text-lg text-muted-foreground">
+              {tp("subtitle")}
+            </p>
+          </FadeIn>
+        </CmsIntro>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SUBJECTS.map((subject, index) => {

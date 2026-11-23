@@ -30,3 +30,13 @@ export type CpCmsCustomPostTypesAddVariables = {
 export type CpCmsCustomPostTypesAddData = {
   cpCmsCustomPostTypesAdd: CustomPostType;
 };
+
+export const CP_CMS_CUSTOM_FIELD_GROUPS_ADD = gql`
+  mutation CpCmsCustomFieldGroupsAdd($input: CustomFieldGroupInput!) {
+    cpCmsCustomFieldGroupsAdd(input: $input) {
+      _id
+      code
+      fields
+    }
+  }
+`;

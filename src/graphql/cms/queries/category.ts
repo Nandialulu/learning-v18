@@ -3,8 +3,8 @@ import { gql } from "@apollo/client";
 export type CategoryStatus = "active" | "inactive";
 
 export type PageInfo = {
-  cursor?: string;
-  totalCount?: number;
+  endCursor?: string;
+  hasNextPage?: boolean;
 };
 
 export type PostCategory = {
@@ -50,21 +50,23 @@ const CATEGORY_FRAGMENT = gql`
 
 export const CP_CATEGORIES = gql`
   ${CATEGORY_FRAGMENT}
-  query CpCategories($clientPortalId: String, $language: String) {
-    cpCategories(clientPortalId: $clientPortalId, language: $language) {
+  query CpCategories($clientPortalId: String, $language: String, $limit: Int, $cursor: String) {
+    cpCategories(clientPortalId: $clientPortalId, language: $language, limit: $limit, cursor: $cursor) {
       list {
         ...CategoryFields
       }
       totalCount
       pageInfo {
-        cursor
-        totalCount
+        endCursor
+        hasNextPage
       }
     }
   }
 `;
 
 export type CpCategoriesVariables = {
+  limit?: number;
+  cursor?: string;
   clientPortalId?: string;
   language?: string;
 };

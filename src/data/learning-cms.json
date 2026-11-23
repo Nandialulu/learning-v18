@@ -1,0 +1,41 @@
+{
+  "types": {
+    "flashcards": "5s1Y8Q1iRG-O2nBdQ0cO3",
+    "quizzes": "zPG2a3aamol7iHD-iIJz8"
+  },
+  "categories": {
+    "finance-basics:mn": "5xVDoq5Yd7KKXSTmrUSmt",
+    "economics:mn": "aSfs7uEd1EYTKJh5f7xkv",
+    "finance-management:mn": "uo5XhQ-e7CoZSyEE_UjYC",
+    "investment-management:mn": "3wPwp3Ee0qrjnGweyyQPq",
+    "corporate-finance:mn": "cBQVt3i3su6LXh68MbyDw",
+    "bank-management:mn": "eM7dVwjiXOviKLUNA4Dbl",
+    "bank-accounting:mn": "MDPKeEJIfoo-zQM5d8lSg",
+    "finance-basics:en": "57mcEXYTDkkEVq8CVdPVY",
+    "economics:en": "HeAw55JeWZ88B1f2-jZA1",
+    "finance-management:en": "8zIUkfZGzR3MCxeo4mpdh",
+    "investment-management:en": "-pNB-cBO4eyNOCrDGq99r",
+    "corporate-finance:en": "eyeq1CS8cMrz2RjPgeRfq",
+    "bank-management:en": "0HQDSbc6-WKtUgCGiysyg",
+    "bank-accounting:en": "_ED7daWypHT6LvNBTgeTi",
+    "finance-basics:ko": "lf2iy7mTCZk2ZYpNk1rQ9",
+    "economics:ko": "r8phvuQpiZqUNRHr-GrxG",
+    "finance-management:ko": "dVxmSXklZyf-NrKZ-ZQWd",
+    "investment-management:ko": "qEy9Ab_fh9dWi4Q5XdLe4",
+    "corporate-finance:ko": "LHM9nHJidAdWKOLD_CP7D",
+    "bank-management:ko": "dXuCsgWw0aE5_igIVk9Ot",
+    "bank-accounting:ko": "IU5CJ3CzxgHWEts-JwS0g",
+    "finance-basics:ja": "GzMPyTZsOUd13ekmYAlBy",
+    "economics:ja": "ooF03__034NL-yeIw62I8",
+    "finance-management:ja": "n4sey5rnSB68OyXnCBwQO",
+    "investment-management:ja": "2CdOiDoRYdcY58yAWXGoB",
+    "corporate-finance:ja": "TnQFQi0azZd5380lLcM1S",
+    "bank-management:ja": "PSkLSSk5JHaGulZVmVmDy",
+    "bank-accounting:ja": "JLmFsXD6W-Dd4VkLMxqIF"
+  },
+  "version": 1,
+  "typeCodes": {
+    "flashcards": "flashcards_2",
+    "quizzes": "quizzes"
+  }
+}

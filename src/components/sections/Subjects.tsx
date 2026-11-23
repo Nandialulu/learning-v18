@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useLearningCounts } from "@/hooks/useLearningCounts";
 import type { SubjectCounts } from "@/lib/content-counts";
 
 const SUBJECTS = [
@@ -25,6 +26,7 @@ export default function SubjectsSection({
 }) {
   const t = useTranslations("subjects");
   const reduced = useReducedMotion();
+  const liveCounts = useLearningCounts(counts);
 
   return (
     <section className="w-full px-6 py-20 lg:px-[60px] lg:py-24">
@@ -40,7 +42,7 @@ export default function SubjectsSection({
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {SUBJECTS.map((subject, index) => {
-            const cnt = counts[subject.slug] ?? { flashcards: 0, quizzes: 0 };
+            const cnt = liveCounts[subject.slug] ?? { flashcards: 0, quizzes: 0 };
             const meta = `${t("flashcardsCount", { count: cnt.flashcards })} · ${t("quizzesCount", { count: cnt.quizzes })}`;
             return (
               <FadeIn key={subject.key} delay={0.1 + index * 0.1}>

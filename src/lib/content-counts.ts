@@ -1,5 +1,7 @@
 import { readFile } from "fs/promises";
 import { join } from "path";
+import { getStaticApolloClient } from "@/lib/apollo/static-client";
+import { fetchLearningCount } from "@/lib/learning-api";
 
 export type SubjectCounts = {
   flashcards: number;
@@ -14,6 +16,17 @@ export async function getSubjectCounts(
   const base = join(process.cwd(), "src", "data");
 
   for (const slug of subjects) {
+    try {
+      const client = getStaticApolloClient();
+      const [flashcards, quizzes] = await Promise.all([
+        fetchLearningCount(client, "flashcards", slug, locale),
+        fetchLearningCount(client, "quizzes", slug, locale),
+      ]);
+      result[slug] = { flashcards, quizzes };
+      continue;
+    } catch {
+      // Keep the local backup counts when CMS is unavailable.
+    }
     let flashcards = 0;
     for (const file of [`${slug}-${locale}.json`, `${slug}.json`]) {
       try {

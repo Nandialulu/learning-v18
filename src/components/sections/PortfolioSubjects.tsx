@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useLearningCounts } from "@/hooks/useLearningCounts";
 import type { SubjectCounts } from "@/lib/content-counts";
 
 const SUBJECTS = [
@@ -26,6 +27,7 @@ export default function PortfolioSubjects({
   const t = useTranslations("subjects");
   const tp = useTranslations("portfolio");
   const reduced = useReducedMotion();
+  const liveCounts = useLearningCounts(counts);
 
   return (
     <div className="w-full px-6 py-16 lg:px-[60px] lg:py-24">
@@ -45,7 +47,7 @@ export default function PortfolioSubjects({
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SUBJECTS.map((subject, index) => {
-            const cnt = counts[subject.slug] ?? { flashcards: 0, quizzes: 0 };
+            const cnt = liveCounts[subject.slug] ?? { flashcards: 0, quizzes: 0 };
             const meta = `${t("flashcardsCount", { count: cnt.flashcards })} · ${t("quizzesCount", { count: cnt.quizzes })}`;
             return (
               <FadeIn key={subject.key} delay={0.1 + index * 0.08}>

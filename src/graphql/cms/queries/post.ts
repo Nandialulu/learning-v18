@@ -25,8 +25,8 @@ export type PostCategory = {
 };
 
 export type PageInfo = {
-  cursor?: string;
-  totalCount?: number;
+  endCursor?: string;
+  hasNextPage?: boolean;
 };
 
 export type Post = {
@@ -248,8 +248,8 @@ export const CP_POST_LIST = gql`
       }
       totalCount
       pageInfo {
-        cursor
-        totalCount
+        endCursor
+        hasNextPage
       }
     }
   }

@@ -92,5 +92,10 @@
   "portfolio": {
     "pageTitle": "Explore Subjects",
     "subtitle": "Find flashcards and quizzes for the courses you care about."
+  },
+  "learningCms": {
+    "offline": "Could not load the latest content. Showing the saved version.",
+    "retry": "Retry",
+    "empty": "No published questions yet."
   }
 }
